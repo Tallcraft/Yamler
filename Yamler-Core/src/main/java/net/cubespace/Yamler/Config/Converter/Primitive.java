@@ -35,15 +35,15 @@ public class Primitive implements Converter {
     public Object fromConfig(Class type, Object section, ParameterizedType genericType) throws Exception {
         switch(type.getSimpleName()) {
             case "short":
-                return (section instanceof Short) ? section : new Integer((int) section).shortValue();
+                return (section instanceof Short) ? section : ((short) section);
             case "byte":
-                return (section instanceof Byte) ? section : new Integer((int) section).byteValue();
+                return (section instanceof Byte) ? section : ((byte) section);
             case "float":
                 if ( section instanceof Integer ) {
-                    return new Double( (int) section ).floatValue();
+                    return section;
                 }
 
-                return (section instanceof Float) ? section : new Double((double) section).floatValue();
+                return (section instanceof Float) ? section : ((double) section);
             case "char":
                 return (section instanceof Character) ? section : ((String) section).charAt(0);
             default:

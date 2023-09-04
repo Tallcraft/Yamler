@@ -23,7 +23,7 @@
     <modules>
         <module>Yamler-Core</module>
         <module>Yamler-Bungee</module>
-        <module>Yamler-Bukkit</module>
+<!--        <module>Yamler-Bukkit</module>-->
     </modules>
 
     <build>
@@ -101,7 +101,7 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>6.8.7</version>
+            <version>7.8.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

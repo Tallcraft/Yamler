@@ -36,7 +36,7 @@ public class List implements Converter {
     public Object fromConfig(Class type, Object section, ParameterizedType genericType) throws Exception {
         java.util.List newList = new ArrayList();
         try {
-            newList = ((java.util.List) type.newInstance());
+            newList = ((java.util.List) type.getDeclaredConstructor().newInstance());
         } catch (Exception e) {
         }
 

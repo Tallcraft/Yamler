@@ -36,12 +36,12 @@ public class Map implements Converter {
     public Object fromConfig(Class type, Object section, ParameterizedType genericType) throws Exception {
         if (genericType != null) {
 
-            java.util.Map map;
-            try {
-                map = ((java.util.Map) ((Class) genericType.getRawType()).newInstance());
-            } catch (InstantiationException e) {
-                map = new HashMap();
-            }
+            java.util.Map map = new HashMap();
+//            try {
+//                map = ((java.util.Map) ((Class) genericType.getRawType()).getDeclaredConstructor().newInstance());
+//            } catch (InstantiationException e) {
+//                map = new HashMap();
+//            }
 
             if (genericType.getActualTypeArguments().length == 2) {
                 Class keyClass = ((Class) genericType.getActualTypeArguments()[0]);

@@ -40,7 +40,7 @@ public class Set implements Converter {
         java.util.Set<Object> newList = new HashSet<>();
 
         try {
-            newList = (java.util.Set<Object>) type.newInstance();
+            newList = (java.util.Set<Object>) type.getDeclaredConstructor().newInstance();
         } catch (Exception e) { }
 
         if (genericType != null && genericType.getActualTypeArguments()[0] instanceof Class) {
